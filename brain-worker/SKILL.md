@@ -60,6 +60,8 @@ A mismatch is an unticked box, not a tick. Fix the implementation to match the c
 
 ### Tick honestly
 
+If the plan is a file, edit it — rewrite each `[ ]` to `[x]` inline with its evidence note. The plan file is the durable record. If the plan was given inline (not a file), record ticks and evidence in your response.
+
 For each DoD item you verified, tick `[x]` and append a short note citing the evidence — the command and its exit status, or the file:line you cross-checked. Example: `[x] \`tsc --noEmit\` exits 0 — verified`. **No note, no tick.**
 
 A task header `## [ ] Task` becomes `## [x] Task` only when every DoD item is `[x]` and the consistency gate passed. If even one item is unmet or unverifiable, the header stays `[ ]`. There is no third marker. After ticking, recompute the aggregate: if zero `[ ]` task headers remain, the plan's top marker flips to `[x]`; otherwise it stays `[ ]`.
@@ -68,7 +70,7 @@ A task header `## [ ] Task` becomes `## [x] Task` only when every DoD item is `[
 
 Before declaring the plan done, verify nothing outside the touched files regressed: run checks in every module whose code imports a changed symbol, not just the task's; coverage not below baseline; no doc now contradicts code; no sibling test now asserts dead behavior.
 
-Report a brief per-task status — done, already-correct, rejected (with reason), or structurally-invalid (returned to brain-plan) — alongside the mutated plan (ticks + evidence live in it). Then the self-check:
+Report a brief per-task status — done, already-correct, rejected (with reason), or structurally-invalid (returned to brain-plan). If the plan was a file, the file itself now carries every tick and its evidence. If it was inline, include the ticked plan in the report. Then the self-check:
 
 a. Did I run the fork gate before any work?
 b. Did I establish a green baseline (or correctly skip it for docs-only)?
