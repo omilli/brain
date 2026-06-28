@@ -34,7 +34,7 @@ def _default_root() -> Path:
     """Resolve the repo knowledge base: <git-toplevel>/memory.
 
     Walks up from CWD for a `.git` marker; falls back to ./memory (the
-    conventional repo-root layout). The script lives in .agents/skills/memory/,
+    conventional repo-root layout). The script lives in .agents/skills/brain-memory/,
     so its own dir is NOT the KB — never default to __file__.parent. Override
     with --root to target an alternate store.
     """
