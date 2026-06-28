@@ -2,7 +2,7 @@
 
 A portable, namespaced pack of agent skills — a behavioural backbone (`brain-prime`), a discovery→plan→worker→feedback→memory loop, a repo-local memory layer, and the meta skills that maintain the system. All skills share the `brain-` prefix, so they coexist with any project skills without name collisions. Designed for **any coding agent** that reads `AGENTS.md` and discovers skills one level under a `skills/` folder.
 
-This pack is **pure content**: ten `brain-*` skill folders, this README, and `PACK.md`. No build tooling, no sync script — *how it gets into a repo is the consumer's choice*. Drift control is the consumer's concern.
+This pack is **pure content**: ten `brain-*` skill folders and this README. No build tooling, no sync script — *how it gets into a repo is the consumer's choice*. Drift control is the consumer's concern.
 
 ## Skills
 
@@ -24,7 +24,7 @@ This pack is **pure content**: ten `brain-*` skill folders, this README, and `PA
 ## Consume
 
 1. Copy the ten `brain-*/` folders into your repo's `.agents/skills/`. They sit one level deep (`skills/brain-<name>/SKILL.md`) — that is the discovery contract, so do not nest them in a sub-folder. The `brain-` prefix is the isolation: no collision with your project skills, no sub-folder needed.
-   - Simplest tracked pull: `git subtree add --prefix=.agents/skills <this-repo> main` into a fresh `.agents/skills/`, or copy the `brain-*/` dirs into an existing one. (`README.md`/`PACK.md` are inert if they come along — they are not `SKILL.md` and are never discovered.)
+   - Simplest tracked pull: `git subtree add --prefix=.agents/skills <this-repo> main` into a fresh `.agents/skills/`, or copy the `brain-*/` dirs into an existing one. (`README.md` is inert if it comes along — it is not a `SKILL.md` and is never discovered.)
    - A submodule is **not** suitable: it nests one level too deep and hides the skills from discovery.
 2. Add **one line** to your repo's `AGENTS.md`:
 
@@ -35,7 +35,7 @@ This pack is **pure content**: ten `brain-*` skill folders, this README, and `PA
    That line is the entire always-on coupling. `brain-prime` carries the loop + methodology; the verbs are discovered on demand.
 3. (Optional) `brain-memory` writes to a knowledge base at `<repo>/memory/`. The maintenance script lives at `.agents/skills/brain-memory/memory.py` and resolves the repo KB automatically (`<git-toplevel>/memory`). No global store is assumed — a personal global KB is your own global config, outside this pack.
 
-`PACK.md` lists the managed `brain-*` folders — the contract for clean updates (replace only those) and removal.
+The ten `brain-*/` folders are the managed surface — the contract for clean updates (replace only those) and removal.
 
 ## Why the `brain-` prefix
 
