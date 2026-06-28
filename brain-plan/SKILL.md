@@ -61,7 +61,7 @@ Mismatches go back to Phase 2.
 
 ## Phase 5 — Propose, then hand to brain-worker
 
-Present the plan. By default propose it inline for review; write it to disk (e.g. a project `plans/` dir) only if the user wants persistence or such a location already exists. On approval, hand off to the `brain-worker` skill — do not execute the tasks yourself unless the change was small enough to have used the escape hatch.
+Present the plan. When a project `plans/` directory exists, write the contract to `plans/<package>/<category>/<topic>.md` and link it inline; inline-only is the fallback when no such directory exists. On approval, hand off to the `brain-worker` skill — do not execute the tasks yourself unless the change was small enough to have used the escape hatch.
 
 ## Self-check
 
