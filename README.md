@@ -35,6 +35,9 @@ This pack is **pure content**: ten `brain-*` skill folders, this README. No buil
    That line is the entire always-on coupling. `brain-prime` carries the loop + methodology; the verbs are discovered on demand.
 3. (Optional) `brain-memory` writes to a knowledge base at `<repo>/memory/`. The maintenance script lives at `.agents/skills/brain-memory/memory.py` and resolves the repo KB automatically (`<git-toplevel>/memory`). No global store is assumed — a personal global KB is your own global config, outside this pack.
 
+
+The ten `brain-*/` folders are the managed surface — the contract for clean updates (replace only those) and removal.
+
 ## Why the `brain-` prefix
 
 Flat skill discovery (`skills/<name>/SKILL.md`) means names must be unique within a consumer's skills folder. The bare verbs (`plan`, `worker`, `memory`, `audit`, …) are generic and would silently overwrite a consumer's own skill of the same name on copy — and this pack is pure content with no tooling to guard that. The `brain-` prefix makes collisions impossible and doubles as the isolation marker: every `brain-*` skill is visibly part of this pack.
