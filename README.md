@@ -12,8 +12,8 @@ This pack is **pure content**: ten `brain-*` skill folders, this README. No buil
 | `brain-idea` | Stress-test an idea/plan before building; resolve load-bearing forks. Entry point. |
 | `brain-audit` | Review/grade files against the repo's own rules; grounded findings. Entry point. |
 | `brain-feature` | Surface grounded enhancement ideas, hand each to `brain-plan` as an evidence map. Entry point. |
-| `brain-plan` | Turn a goal or evidence map into a task-contract (Files, delta, scenarios, DoD). |
-| `brain-worker` | Execute a plan task-by-task; tick each DoD only with cited evidence. |
+| `brain-plan` | Turn a goal or evidence map(s) into one or more task-contracts (Files, delta, scenarios, DoD) — one file per independently-shippable unit, hard inter-file deps in frontmatter. |
+| `brain-worker` | Execute a plan task-by-task; respect inter-file deps, tick each DoD only with cited evidence. |
 | `brain-feedback` | After a run with friction, conservatively propose config/skill edits. |
 | `brain-memory` | Persist verified decisions/facts to the repo's knowledge base; refresh/supersede. |
 | `brain-skill` | Author new skills or revise existing ones. Standalone. |
